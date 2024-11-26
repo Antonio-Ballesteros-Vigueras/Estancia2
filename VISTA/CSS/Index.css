@@ -1,0 +1,1076 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fondo beige claro */
+    color: #333;
+}
+
+/* Estilo de la barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px; /* Ajusta el valor para agregar más espacio */
+}
+
+nav img {
+    width: auto; /* Ajusta el ancho de la imagen */
+    height: 21px; /* Ajusta automáticamente la altura proporcional */
+}
+
+nav .logo h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul.nav-links {
+    display: flex;
+    justify-content: space-between; /* Los elementos se distribuyen entre la izquierda y derecha */
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    width: 87%; /* Ocupa el ancho completo */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.left-items, .right-items {
+    display: flex;
+    gap: 12px; /* Espaciado entre los elementos */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; /* Tamaño base */
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff945d; /* Naranja más claro */
+}
+
+/* Botones derechos */
+nav .btn {
+    padding: 10px 25px;
+    background-color: #f47c3c;
+    color: white !important;
+    font-size: 13px; /* Tamaño base */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+}
+
+nav .btn:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+    text-decoration: none; /* Subrayar el enlace cuando se pasa el ratón */
+}
+
+nav .btn-dos {
+    padding: 10px 25px;
+    background-color: #a29e9d;
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px; /* Tamaño base */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+}
+
+nav .btn-dos:hover {
+    background-color: #6b6765;
+    transform: translateY(-3px);
+    text-decoration: none; /* Subrayar el enlace cuando se pasa el ratón */
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 992px) {
+    nav ul.nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    nav ul.nav-links.nav-active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Ajustar los márgenes */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .left-items, .right-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .btn, nav .btn-dos {
+        width: 100%; /* Asegurar que los botones no se partan */
+        text-align: center;
+    }
+
+    /* Ajustar el tamaño del texto para pantallas medianas */
+    nav .logo h1 {
+        font-size: 20px; /* Tamaño reducido */
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Tamaño reducido */
+    }
+
+    nav .btn, nav .btn-dos {
+        font-size: 12px; /* Tamaño reducido */
+    }
+}
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 768px) {
+    nav ul.nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    nav ul.nav-links.nav-active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Ajustar los márgenes */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .left-items, .right-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .btn, nav .btn-dos {
+        width: 100%; /* Asegurar que los botones no se partan */
+        text-align: center;
+    }
+
+    /* Ajustar el tamaño del texto para pantallas medianas */
+    nav .logo h1 {
+        font-size: 20px; /* Tamaño reducido */
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Tamaño reducido */
+    }
+
+    nav .btn, nav .btn-dos {
+        font-size: 12px; /* Tamaño reducido */
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul.nav-links {
+        display: flex; /* Asegura que los elementos sean flexibles */
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%; /* Asegurar que el ul ocupe el ancho completo */
+    }
+
+    nav ul.nav-links li {
+        text-align: center; /* Centra el texto de cada elemento */
+        width: 100%; /* Asegura que los elementos ocupen el ancho completo */
+        margin: 10px 0; /* Añade separación vertical entre los elementos */
+    }
+
+    .left-items, .right-items {
+        width: 100%; /* Asegurar que los items ocupen el ancho completo */
+    }
+
+    nav .btn, nav .btn-dos {
+        width: 100%; /* Asegurar que los botones no se partan */
+        text-align: center;
+    }
+
+    /* Ajustar aún más el tamaño del texto para pantallas pequeñas */
+    nav .logo h1 {
+        font-size: 18px; /* Tamaño más reducido */
+    }
+
+    nav ul li a {
+        font-size: 10px; /* Tamaño más reducido */
+    }
+
+    nav .btn, nav .btn-dos {
+        font-size: 10px; /* Tamaño más reducido */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                      SECCION PRINCIPAL */
+
+/* Estilo de la sección principal */
+.hero {
+    background-color: #ffffff; /* Fondo */
+    color: white;
+    text-align: center;
+    padding: 170px 0;
+    padding-bottom: 0px;
+    position: relative; /* Establece un contexto para el posicionamiento */
+    overflow: hidden; /* Asegura que los elementos no se salgan del contenedor */
+}
+
+
+/* Difuminado */
+.fade-overlay {
+    position: absolute;
+    bottom: 0; /* Siempre al final del contenedor */
+    left: 0;
+    right: 0;
+    height: 140px; /* Altura inicial del difuminado */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(241, 232, 232) 100%);
+    pointer-events: none; /* No interfiere con otros elementos */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .fade-overlay {
+        height: 120px; /* Reduce la altura del difuminado en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .fade-overlay {
+        height: 100px; /* Altura más pequeña para dispositivos pequeños */
+    }
+}
+
+
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+/* Botón catálogo */
+.hero .btn {
+    padding: 15px 30px;
+    background-color: #907e36;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    /* Posicionamiento */
+    position: absolute;
+    top: 90%; /* Ajuste inicial */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el botón */
+    max-width: 80%; /* Evita que el botón sea más ancho que el contenedor en pantallas pequeñas */
+    white-space: nowrap; /* Evita que el texto del botón se divida */
+}
+
+.hero .btn:hover {
+    background-color: #756259;
+    transform: translate(-50%, -53%);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero .btn {
+        font-size: 10px; /* Reduce el tamaño de la fuente */
+        padding: 12px 25px; /* Ajusta el tamaño del botón */
+        top: 85%; /* Ajusta la posición vertical */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .btn {
+        font-size: 8px; /* Reduce más el tamaño de la fuente en pantallas muy pequeñas */
+        padding: 10px 20px; /* Ajusta el tamaño del botón */
+        top: 95%; /* Mantiene el botón dentro de su sección */
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*                                                          ESPACIOS ENTRE ESTAS DOS SECCIONES*/
+
+.hero, .hero2 {
+    margin: 0;   /* Elimina cualquier margen */
+    padding: 3;  /* Elimina el padding interno */
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                      SECCION Soluciones */
+
+
+.hero2 {
+    background-color: #f5f37e; /* Fondo */
+    height: 540px;    /* Ajusta la altura de la sección */
+    color: white;
+    text-align: left;
+    padding: 100px 0;
+    padding-bottom: 50px;
+    position: relative;
+
+
+}
+
+/* Sección Nosotros */
+.about {
+    background-color: #f5f37e !important; /* Fondo beige más claro */
+    padding: 30px; /* Ajusta el espacio interno */
+    text-align: center;
+    border-radius: 13px;
+    margin: 20px; /* Ajusta el espacio externo */
+    width: 50%; /* Ancho para ocupar menos de la mitad de la sección */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    float: left; /* Flotante a la izquierda */
+    border: 0px dashed #f43c61; /* Borde punteado */
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f43c61;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #f43c61;
+}
+
+.about .btn {
+    padding: 10px 25px;
+    background-color: #f43c61;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about .btn:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+}
+
+
+/* Estilos para la imagen flotante a la derecha */
+/*---------------------1--------------------------------------*/
+.about-image {
+    float: right; /* Flota a la derecha */
+    width: 16%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: right;
+    margin-right: 15%;
+    margin-top: 0%;
+    height: 0px;
+}
+
+.about-image img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 50px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+/*---------------------2--------------------------------------*/
+.about-image-dos {
+    float: inline-start; /* Flota a la derecha */
+    width: 10%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: center;
+    margin-right: 5%;
+}
+
+.about-image-dos img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 20px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+/*---------------------------3--------------------------------*/
+.about-image-tres {
+    float: inline-end; /* Flota a la derecha */
+    width: 6%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: center;
+    margin-right: 10%;
+}
+
+.about-image-tres img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 20px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                      SECCION opcion natural */
+
+
+.hero3 {
+    background-color: #12e9cc2b; /* Fondo azul solo que no se ve*/
+    height: 540px;    /* Ajusta la altura de la sección */
+    color: white;
+    text-align: left;
+    padding: 100px 0;
+    padding-bottom: 50px;
+    position: relative;
+
+
+}
+
+/* Sección opcion natural */
+.about2 {
+    background-color: #12e9cc2b !important; /* Fondo beige más claro */
+    padding: 30px; /* Ajusta el espacio interno */
+    text-align: center;
+    border-radius: 13px;
+    margin: 20px; /* Ajusta el espacio externo */
+    width: 50%; /* Ancho para ocupar menos de la mitad de la sección */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    float: right; /* Flotante a la izquierda */
+    border: 0px dashed #f43c61; /* Borde punteado */
+}
+
+.about2 h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #11947c;
+}
+
+.about2 p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #f43c61;
+}
+
+.about2 .btn {
+    padding: 10px 25px;
+    background-color: #f43c61;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about2 .btn:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+}
+
+/* Sección opcion natural */
+.about2-dos {
+    background-color: #12e9cc2b !important; /* Fondo beige más claro */
+    padding: 10px; /* Ajusta el espacio interno */
+    text-align: center;
+    border-radius: 13px;
+    margin: 20px; /* Ajusta el espacio externo */
+    width: 50%; /* Ancho para ocupar menos de la mitad de la sección */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    float: inline-end; /* Flotante a la izquierda */
+    border: 0px dashed #f43c61; /* Borde punteado */
+    width: 92%;
+}
+/* Media query para pantallas pequeñas (hasta 480px) */
+@media (max-width: 576px) {
+    .about2-dos {
+        width: 95%; /* Ajusta el ancho a un 95% en pantallas más pequeñas */
+        padding: 0px 0px; /* Reduzco el padding para pantallas pequeñas */
+    }
+
+    .about2-dos p {
+        font-size: 10px; /* Ajusta el tamaño de la fuente para mejor legibilidad */
+    }
+}
+
+.about2-dos p {
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #11947c;
+}
+
+
+
+/* Estilos para la imagen flotante a la derecha */
+.about-image2 {
+    float: left; /* Flota a la derecha */
+    width: 35%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 0%;
+    height: 0px;
+}
+
+.about-image2 img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 20px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                      SECCION suplemento natural */
+
+
+.hero4 {
+    background-color: #e9129e2b; /* Fondo azul solo que no se ve*/
+    height: 540px;    /* Ajusta la altura de la sección */
+    color: white;
+    text-align: left;
+    padding: 100px 0;
+    padding-bottom: 50px;
+    position: relative;
+
+
+}
+
+/* Sección opcion natural */
+.about3 {
+    background-color: #e9129e2b !important; /* Fondo beige más claro */
+    padding: 30px; /* Ajusta el espacio interno */
+    text-align: center;
+    border-radius: 13px;
+    margin: 20px; /* Ajusta el espacio externo */
+    width: 50%; /* Ancho para ocupar menos de la mitad de la sección */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    float: left; /* Flotante a la izquierda */
+    border: 0px dashed #f43c61; /* Borde punteado */
+}
+
+.about3 h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #942911;
+}
+
+.about3 p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #942911b1;
+}
+
+.about3 .btn {
+    padding: 10px 25px;
+    background-color: #f43c61;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about3 .btn:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+}
+
+/* Estilos para la imagen flotante a la derecha */
+/*---------------------1--------------------------------------*/
+.about-image3 {
+    float: right; /* Flota a la derecha */
+    width: 26%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: right;
+    margin-right: 15%;
+    margin-top: 0%;
+    height: 0px;
+}
+
+.about-image3 img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 50px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+/*---------------------2--------------------------------------*/
+.about-image3-dos {
+    float: right; /* Flota a la derecha */
+    width: 12%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: right;
+    margin-right: 2%;
+    margin-top: 0%;
+    height: 0px;
+}
+
+.about-image3-dos img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 50px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+/*---------------------3--------------------------------------*/
+.about-image3-tres {
+    float: inline-end; /* Flota a la derecha */
+    width: 10%; /* Ajusta el tamaño para que encaje */
+    padding: 0px; /* Añade un poco de espacio alrededor */
+    text-align: right;
+    margin-right: 2%;
+    margin-top: 18%;
+    height: 0px;
+}
+
+.about-image3-tres img {
+    max-width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    border-radius: 50px; /* Redondea los bordes de la imagen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+
+
+/* Media query para ocultar imágenes en escalas pequeñas */
+@media (max-width: 768px) {
+    .about-image,
+    .about-image-dos,
+    .about-image-tres,
+    .about-image2,
+    .about-image3,
+    .about-image3-dos,
+    .about-image3-tres {
+        display: none; /* Oculta las imágenes */
+    }
+
+    /* Opcional: Ajustar el ancho de las secciones sin las imágenes */
+    .about,
+    .about2,
+    .about3 {
+        width: 100%; /* Ocupar todo el ancho disponible */
+        float: none; /* Cancelar flotado */
+        margin: 0 auto; /* Centrar la sección */
+    }
+}
+
+@media (max-width: 820px) {
+    .about-image2{
+        display: none; /* Oculta las imágenes */
+    }
+
+    /* Opcional: Ajustar el ancho de las secciones sin las imágenes */
+    .about2{
+        width: 100%; /* Ocupar todo el ancho disponible */
+        float: none; /* Cancelar flotado */
+        margin: 0 auto; /* Centrar la sección */
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+/*                                          FOOTER*/
+/* Pie de página */
+footer {
+    background-color: #ffffff; /* Fondo oscuro */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Sección de formulario de login */
+.login {
+    background-color: #fff1cf; /* Fondo beige claro */
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    margin: 100px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.login h2 {
+    color: #f47c3c;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.login form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+}
+
+.login label {
+    font-size: 16px;
+    color: #333;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login input[type="submit"] {
+    background-color: #f47c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                      COLORES DE LETRAS*/
+
+/* Cambiar el color del título principal */
+h1 {
+    color: orange; /* Color naranja para el título principal */
+    font-size: 36px;
+}
+
+/* Cambiar el color de los subtítulos */
+h2 {
+    color: #3b2503; /* Un naranja más oscuro para los subtítulos */
+}
+
+/* Cambiar el color del texto en párrafos */
+p {
+    color: #955895; /* Color gris oscuro para el texto normal */
+}
+
+/* Resaltar ciertas palabras o frases con un color especial */
+span.destacado {
+    color: red; /* Color rojo para el texto destacado */
+    font-weight: bold; /* Poner el texto en negrita */
+}
+
+
+/* Cambiar el color del texto de los enlaces en la lista */
+ul li a {
+    color: #ff9d00 !important; /* Forzamos el color */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+/* Cambiar el color del enlace cuando el ratón pasa sobre él */
+ul li a:hover {
+    color: none !important; /* Cambia a un naranja más oscuro cuando se pasa el ratón */
+    text-decoration: underline; /* Subrayar el enlace cuando se pasa el ratón */
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                  EFECTO CARRUSEL IMAGENES*/
+
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.img {
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+    opacity: 1;
+    border-radius: 10px; /* Ajusta el borde redondeado */
+}
+
+/* Tamaños ajustables */
+.large {
+    width: 19%; /* Cambia el porcentaje para modificar el tamaño */
+    height: auto; /* Ajusta la altura */
+}
+
+.medium {
+    width: 15%;
+    height: auto;
+}
+
+.small {
+    width: 11%;
+    height: auto;
+}
+
+.bigsmall {
+    width: 8%;
+    height: auto;
+}
+
+/* Efecto de desvanecimiento */
+.fade {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.img.fade {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* Delays para cada imagen */
+.img:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.img:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.img:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.img:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.img:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.img:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+.img:nth-child(7) {
+    transition-delay: 0.6s;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+/*                                                  EFECTO CARRUSEL TEXTO */
+
+.text-container {
+    position: absolute;
+    top: 48%;
+    left: 47%;
+    transform: translate(-40%, -40%);
+    z-index: 10; /* Asegura que esté encima de las imágenes */
+}
+
+.fade-text {
+    font-size: 66px;
+    color: #907e36;
+    opacity: 1;
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.fade-text2 {
+    font-size: 66px;
+    color: #713e84;
+    opacity: 1;
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.fade-text.fade {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+/*                                                  RESPONSIVIDAD */
+
+/* En pantallas más pequeñas */
+@media (max-width: 768px) {
+    .text-container {
+        position: static; /* Ajusta la posición para evitar problemas con el diseño */
+        transform: none;
+        text-align: center; /* Centra el texto horizontalmente */
+        margin-top: 20px; /* Ajusta el espaciado */
+    }
+
+    .fade-text,
+    .fade-text2 {
+        font-size: 32px; /* Reduce el tamaño del texto */
+        color: #907e36; /* Mantiene el color original */
+        opacity: 1; /* Mantiene las transiciones activas */
+        transform: none; /* Elimina cambios de posición bruscos */
+        transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Conserva las animaciones */
+    }
+
+    .fade-text.fade,
+    .fade-text2.fade {
+        opacity: 0; /* Permite el efecto de desvanecimiento */
+        transform: translateY(-20px); /* Reduce el desplazamiento del texto para pantallas pequeñas */
+    }
+}
+
+/* En pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .fade-text,
+    .fade-text2 {
+        font-size: 20px; /* Aún más pequeño en dispositivos muy pequeños */
+    }
+}
+
+/* En pantallas más grandes, hasta 992px */
+@media (max-width: 992px) {
+    .text-container {
+        margin-top: 30px; /* Aumenta el margen superior para pantallas medianas */
+    }
+
+    .fade-text,
+    .fade-text2 {
+        font-size: 28px; /* Reduce el tamaño de la fuente para pantallas medianas */
+    }
+}

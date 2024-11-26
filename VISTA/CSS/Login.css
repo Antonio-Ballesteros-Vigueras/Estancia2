@@ -1,0 +1,398 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fondo beige claro */
+    color: #333;
+}
+
+/* Estilo de la barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+}
+
+nav .logo h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul.nav-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: auto;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: orange;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff945d;
+}
+
+nav img {
+    width: auto;
+    height: 21px;
+}
+
+.items {
+    display: flex;
+    gap: 12px;
+}
+
+nav .btn {
+    padding: 10px 25px;
+    background-color: #a29e9d;
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .btn:hover {
+    background-color: #6b6765;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 768px) {
+    nav ul.nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    nav ul.nav-links.nav-active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav .logo h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    nav .btn {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul.nav-links {
+        display: flex; /* Asegura que los elementos sean flexibles */
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%; /* Asegurar que el ul ocupe el ancho completo */
+    }
+
+    nav ul.nav-links li {
+        text-align: center; /* Centra el texto de cada elemento */
+        width: 100%; /* Asegura que los elementos ocupen el ancho completo */
+        margin: 10px 0; /* Añade separación vertical entre los elementos */
+    }
+
+    .items {
+        width: 100%;
+    }
+
+    nav .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav .logo h1 {
+        font-size: 16px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+    }
+
+    nav .btn {
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+/* Pie de página */
+footer {
+    background-color: #ffffff; /* Fondo oscuro */
+    color: rgb(255, 94, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;     /* Centrar verticalmente */
+    box-sizing: border-box;  /* Asegura que el padding no afecte el ancho total */    
+}
+
+footer p {
+    margin: 0;
+}
+
+/*------------------------------------------------------Sección de formulario de login------------------*/
+.formulario {
+    background-color: #ffffff; /* Fondo */
+    height: 0px; /* Ajusta la altura de la sección */
+    color: white;
+    text-align: right;
+    padding: 0px 20px; /* Ajusta el padding a un valor relativo */
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.text {
+    background-color: #ffffff !important; /* Fondo beige más claro */
+    padding: auto auto; /* Ajusta el espacio interno */
+    text-align: center;
+    border-radius: 13px;
+    margin: 20% auto;
+    width: 30%; /* Ancho para ocupar menos de la mitad de la sección */
+    box-shadow: none;
+    left: 10%;
+    border: 0px dashed orange; /* Borde punteado */
+    position: fixed;
+}
+
+.text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: orange;
+}
+
+.text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: rgb(189, 125, 5);
+}
+
+.login {
+    background-color: #e6b9141c; /* Fondo beige claro */
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px; /* Ancho fijo */
+    margin: 100px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    float: right;
+    margin-right: 200px; /* Añade un margen derecho para separarlo de la pared derecha */
+
+}
+
+.login p {
+    color: #333;
+}
+
+.login .btn {
+    padding: 10px 25px;
+    background-color: #d092715d;
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login .btn:hover {
+    background-color: #6b6765c2;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.login h2 {
+    color: #f47c3c;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: Arial;
+}
+
+.login form {
+    background-color: white;
+    border-radius: 25px;
+    padding: 30px;
+    width: 100%;
+}
+
+.login label {
+    font-size: 16px;
+    color: orange;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login input[type="submit"] {
+    background-color: #f47c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+}
+
+.login img {
+    width: auto;
+    height: 21px; /* Ajusta automáticamente la altura proporcional */
+}
+
+/* Media Queries para la responsividad */
+@media (max-width: 768px) {
+    .text {
+        display: none; /* Oculta la sección de texto en pantallas pequeñas */
+    }
+
+    .formulario {
+        text-align: center; /* Centra el texto en la sección de formulario */
+        padding: 0 10px; /* Ajusta el padding */
+    }
+
+    .login {
+        width: 90%; /* Asegura que la sección de login ocupe el 90% del ancho */
+        margin: 20px auto; /* Ajusta el margen */
+    }
+}
+
+/* Media Queries para la responsividad */
+@media (max-width: 992px) {
+    .text {
+        display: none; /* Oculta la sección de texto en pantallas pequeñas */
+    }
+
+    .formulario {
+        text-align: center; /* Centra el texto en la sección de formulario */
+        padding: 0 20px; /* Ajusta el padding */
+    }
+
+    .login {
+        width: 100%; /* Asegura que la sección de login ocupe el 90% del ancho */
+        margin: 30px auto; /* Ajusta el margen */
+    }
+}
+
+@media (max-width: 1100px) {
+    .text {
+        display: none; /* Oculta la sección de texto en pantallas pequeñas */
+    }
+
+}

@@ -1,0 +1,439 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fondo beige claro */
+    color: #333;
+}
+
+/* Estilo de la barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px; /* Ajusta el valor para agregar más espacio */
+}
+
+nav img {
+    width: auto; /* Ajusta el ancho de la imagen */
+    height: 21px; /* Ajusta automáticamente la altura proporcional */
+}
+
+nav .logo h1 {
+    color: white;
+    font-size: 24px; /* Tamaño base */
+    font-weight: bold;
+}
+
+nav ul.nav-links {
+    display: flex;
+    justify-content: space-between; /* Los elementos se distribuyen entre la izquierda y derecha */
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    width: 87%; /* Ocupa el ancho completo */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.left-items, .right-items {
+    display: flex;
+    gap: 12px; /* Espaciado entre los elementos */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: orange;
+    text-decoration: none;
+    font-size: 14px; /* Tamaño base */
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff945d; /* Naranja más claro */
+}
+
+/* Botones derechos */
+nav .btn {
+    padding: 10px 25px;
+    background-color: #f47c3c;
+    color: white !important;
+    font-size: 13px; /* Tamaño base */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+}
+
+nav .btn:hover {
+    background-color: #ff945d;
+    transform: translateY(-3px);
+    text-decoration: none; /* Subrayar el enlace cuando se pasa el ratón */
+}
+
+nav .btn-dos {
+    padding: 10px 25px;
+    background-color: #a29e9d;
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px; /* Tamaño base */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+}
+
+nav .btn-dos:hover {
+    background-color: #6b6765;
+    transform: translateY(-3px);
+    text-decoration: none; /* Subrayar el enlace cuando se pasa el ratón */
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 992px) {
+    nav ul.nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    nav ul.nav-links.nav-active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Ajustar los márgenes */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .left-items, .right-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .btn, nav .btn-dos {
+        width: 100%; /* Asegurar que los botones no se partan */
+        text-align: center;
+    }
+
+    /* Ajustar el tamaño del texto para pantallas medianas */
+    nav .logo h1 {
+        font-size: 20px; /* Tamaño reducido */
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Tamaño reducido */
+    }
+
+    nav .btn, nav .btn-dos {
+        font-size: 12px; /* Tamaño reducido */
+    }
+}
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 768px) {
+    nav ul.nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    nav ul.nav-links.nav-active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Ajustar los márgenes */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .left-items, .right-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .btn, nav .btn-dos {
+        width: 100%; /* Asegurar que los botones no se partan */
+        text-align: center;
+    }
+
+    /* Ajustar el tamaño del texto para pantallas medianas */
+    nav .logo h1 {
+        font-size: 20px; /* Tamaño reducido */
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Tamaño reducido */
+    }
+
+    nav .btn, nav .btn-dos {
+        font-size: 12px; /* Tamaño reducido */
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul.nav-links {
+        display: flex; /* Asegura que los elementos sean flexibles */
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%; /* Asegurar que el ul ocupe el ancho completo */
+    }
+
+    nav ul.nav-links li {
+        text-align: center; /* Centra el texto de cada elemento */
+        width: 100%; /* Asegura que los elementos ocupen el ancho completo */
+        margin: 10px 0; /* Añade separación vertical entre los elementos */
+    }
+
+    nav ul.nav-links li a {
+        font-size: 12px; /* Ajustar el tamaño de la fuente según sea necesario */
+    }
+
+    .left-items, .right-items {
+        width: 100%; /* Asegurar que los items ocupen el ancho completo */
+    }
+
+    nav .btn, nav .btn-dos {
+        width: 100%; /* Asegurar que los botones no se partan */
+        text-align: center;
+    }
+
+    /* Ajustar aún más el tamaño del texto para pantallas pequeñas */
+    nav .logo h1 {
+        font-size: 18px; /* Tamaño más reducido */
+    }
+}
+
+
+
+
+/* ------------------------------------------------Sección Nosotros */
+
+.nosotros {
+    background-image: url('../IMG/nosotros1.jpeg'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;    
+    color: white;
+    text-align: right;
+    padding: 50px 20px;
+    padding-bottom: 50px;
+    position: relative; 
+    margin-bottom: 1%;
+}
+
+.about {
+    background-color: #fff1e6ea; /* Fondo beige más claro */
+    padding: 80px 50px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 40px auto;
+    width: 80%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3b2503;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #907e36;
+}
+
+
+
+/* ------------------------------------------------Sección Nosotros 2*/
+
+.nosotros2 {
+    background-image: url('../IMG/nosotros2.jpeg'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;    
+    color: white;
+    text-align: right;
+    padding: 50px 20px;
+    padding-bottom: 50px;
+    position: relative; 
+    margin-bottom: 1%;
+
+}
+
+.about2 {
+    background-color: #fff1e6ea; /* Fondo beige más claro */
+    padding: 80px 50px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 40px auto;
+    width: 80%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about2 h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3b2503;
+}
+
+.about2 p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #907e36;
+}
+
+
+
+
+
+/* ------------------------------------------------Sección Nosotros 3 */
+
+.nosotros3 {
+    background-image: url('../IMG/nosotros3.jpeg'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;    
+    color: white;
+    text-align: right;
+    padding: 50px 20px;
+    padding-bottom: 50px;
+    position: relative; 
+}
+
+.about3 {
+    background-color: #fff1e6ea; /* Fondo beige más claro */
+    padding: 80px 50px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 40px auto;
+    width: 80%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about3 h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3b2503;
+}
+
+.about3 p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #907e36;
+}
+
+
+
+/* Pie de página */
+footer {
+    background-color: #ffffff; /* Fondo oscuro */
+    color: rgb(255, 94, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;     /* Centrar verticalmente */
+    box-sizing: border-box;  /* Asegura que el padding no afecte el ancho total */    
+}
+
+footer p {
+    margin: 0;
+}
+

@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fondo beige claro */
+    color: #333;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+}
+
+nav .logo h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: orange;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: none; /* Naranja más claro */
+}
+
+nav img {
+    width: auto; /* Ajusta el ancho de la imagen */
+    height: 21px; /* Ajusta automáticamente la altura proporcional */
+}
+@media (max-width: 992px) {
+    nav ul {
+        /* Mantener los elementos en fila */
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-right: 10px; /* Ajustar los márgenes */
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        font-size: 15px; /* Ajusta el tamaño del texto */
+    }
+
+    .items {
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        gap: 2px;
+    }
+
+    nav .btn {
+        width: 100%; /* Asegurar que el botón no se parta */
+        padding: 9px;
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-right: 10px; /* Ajustar los márgenes */
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Ajusta el tamaño del texto */
+    }
+
+    .items {
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        gap: 2px;
+    }
+
+    nav .btn {
+        width: 100%; /* Asegurar que el botón no se parta */
+        padding: 7px;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    nav .logo {
+        margin-bottom: 0px;
+    }
+
+    nav .btn {
+        width: 100%; /* Asegurar que el botón no se parta */
+        padding: 5px;
+        text-align: center;
+        font-size: 7px;
+    }
+
+    .items {
+        flex-direction: row; /* Si los elementos no caben en una línea, se apilan */
+        gap: 0px;
+    }
+
+    nav ul li a {
+        font-size: 4px; /* Ajuste para pantallas aún más pequeñas */
+    }
+}
+.items {
+    display: flex;
+    gap: 12px; /* Espaciado entre los elementos */
+}
+
+nav .btn {
+    padding: 10px 25px;
+    background-color: #f47c3c;
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .btn:hover {
+    background-color: #6b6765;
+    transform: translateY(-3px);
+    text-decoration: none; /* Subrayar el enlace cuando se pasa el ratón */
+
+}
+
+
+
+
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: center;
+    padding: 30px 0px;
+    margin: 45px auto;
+    background-color: rgba(255, 166, 0, 0.046);
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.contact-item {
+    width: 100%;
+    max-width: 250px; /* Aumenta el ancho máximo de cada ítem */
+    background-color: #ffffff;
+    border: 5px solid #ff945d; /* Aumenta el grosor del borde */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+
+.contact-item h3 {
+    font-size: 28px; /* Aumenta el tamaño del texto del título */
+    color: orange;
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    font-size: 18px; /* Aumenta el tamaño de fuente del texto */
+    color: #333;
+    line-height: 1.8;
+}
+
+.contact-item a {
+    color: orange;
+    text-decoration: none;
+    font-size: 20px; /* Aumenta el tamaño de fuente de los enlaces */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #f47c3c;
+}
+
+.contact-item2D {
+    width: 100%;
+    max-width: 250px; /* Aumenta el ancho máximo de cada ítem */
+    background-color: rgba(255, 166, 0, 0.292);
+    border: 5px solid #ff945d; /* Aumenta el grosor del borde */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+
+.contact-item2D h3 {
+    font-size: 28px; /* Aumenta el tamaño del texto del título */
+    color: orange;
+    margin-bottom: 15px;
+}
+
+.contact-item2D p {
+    font-size: 18px; /* Aumenta el tamaño de fuente del texto */
+    color: #333;
+    line-height: 1.8;
+}
+
+.contact-item2D a {
+    color: orange;
+    text-decoration: none;
+    font-size: 20px; /* Aumenta el tamaño de fuente de los enlaces */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-item2D a:hover {
+    color: #f47c3c;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumenta el espacio entre los íconos */
+}
+
+.social-icon {
+    width: 30px; /* Aumenta el tamaño de los íconos */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon2 {
+    width: 40px; /* Aumenta el tamaño de los íconos */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.15); /* Aumenta el efecto de ampliación */
+}
+
+
+
+.bienvenida {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente el contenido dentro de la sección */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Añadir un poco de espacio alrededor */
+    margin: 80px auto; /* Centrar la sección en la página */
+    width: 100%; /* Ocupa el ancho completo */
+    background-color: #ffffff; /* Color de fondo */
+}
+
+.bienvenida h1 {
+    font-size: 2em; /* Ajusta el tamaño de la fuente */
+    color: orange; /* Color del texto */
+}
+
+
+.catalogo-container {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio vertical */
+    gap: 20px; /* Espaciado entre filtros y catálogo */
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.producto {
+    border: 2px solid orange; /* Borde naranja */
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    text-align: justify;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #ffffff, #fff2e5, #ffdebe); /* Degradado cálido */
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.producto:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.3);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: none solid #ffa64d;
+}
+
+.producto h3 {
+    font-size: 20px;
+    color: #cc5200; /* Naranja oscuro */
+    margin: 10px 0;
+    text-align: center;
+}
+
+.producto p {
+    font-size: 14px;
+    color: #663300; /* Marrón suave */
+    margin: 5px 0;
+}
+
+.producto strong {
+    color: #ff704d; /* Naranja brillante */
+}
+
+.producto span {
+    font-weight: bold;
+    color: #cc2900; /* Naranja rojizo */
+}
+
+.producto a {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    background: #feecdc; /* Naranja brillante */
+    padding: 10px 15px;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+}
+
+.producto a:hover {
+    background: #ffdcfd; /* Naranja oscuro */
+}
+
+.producto a img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+.filtros {
+    width: 20%; /* Ancho del contenedor de filtros */
+    padding: 10px;
+    background-color: #fafafa; /* Fondo opcional */
+    border: 2px solid rgb(189, 13, 13); /* Borde opcional */
+    border-radius: 10px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.filtros h3 {
+    font-size: 18px;
+    color: #cc5200; /* Color similar al catálogo */
+    margin-bottom: 10px;
+}
+
+.filtros label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #663300;
+}
+
+.filtros input,
+.filtros select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filtros input[type="submit"] {
+    background-color: #ff704d;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.filtros input[type="submit"]:hover {
+    background-color: #cc2900;
+}
+
+
+footer {
+    background-color: #ffffff; /* Fondo oscuro */
+    color: rgb(255, 94, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;     /* Centrar verticalmente */
+    box-sizing: border-box;  /* Asegura que el padding no afecte el ancho total */    
+}
+
+footer p {
+    margin: 0;
+}

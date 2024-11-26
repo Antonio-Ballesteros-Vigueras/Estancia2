@@ -1,0 +1,498 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fondo beige claro */
+    color: #333;
+}
+
+/* --------------------------------------------Estilo de la barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+}
+
+nav .logo h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: orange;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: none; /* Naranja más claro */
+}
+
+nav img {
+    width: auto; /* Ajusta el ancho de la imagen */
+    height: 21px; /* Ajusta automáticamente la altura proporcional */
+}
+
+/* Estilo para los elementos en la izquierda */
+.items {
+    display: flex;
+    gap: 12px; /* Espaciado entre los elementos */
+}
+
+nav .btn {
+    padding: 10px 25px;
+    background-color: #f47c3c;
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .btn:hover {
+    background-color: #6b6765;
+    transform: translateY(-3px);
+    text-decoration: none; /* Subrayar el enlace cuando se pasa el ratón */
+
+}
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 992px) {
+    nav ul {
+        /* Mantener los elementos en fila */
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-right: 10px; /* Ajustar los márgenes */
+        margin-bottom: 0;
+    }
+
+    /* Reducir el tamaño de la fuente */
+    nav ul li a {
+        font-size: 15px; /* Ajusta el tamaño del texto */
+    }
+
+    .items {
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        gap: 2px;
+    }
+
+    /* Asegurar que el botón se ajuste sin romperse */
+    nav .btn {
+        width: 100%; /* Asegurar que el botón no se parta */
+        padding: 9px;
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+/* Media Queries para el nav responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        /* Mantener los elementos en fila */
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-right: 10px; /* Ajustar los márgenes */
+        margin-bottom: 0;
+    }
+
+    /* Reducir el tamaño de la fuente */
+    nav ul li a {
+        font-size: 12px; /* Ajusta el tamaño del texto */
+    }
+
+    .items {
+        flex-direction: row; /* Asegura que los elementos se mantengan en una fila */
+        gap: 2px;
+    }
+
+    /* Asegurar que el botón se ajuste sin romperse */
+    nav .btn {
+        width: 100%; /* Asegurar que el botón no se parta */
+        padding: 7px;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        /* Asegura que el nav esté en columna si se necesita */
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    nav .logo {
+        margin-bottom: 0px;
+    }
+
+    nav .btn {
+        width: 100%; /* Asegurar que el botón no se parta */
+        padding: 5px;
+        text-align: center;
+        font-size: 7px;
+    }
+
+    .items {
+        flex-direction: row; /* Si los elementos no caben en una línea, se apilan */
+        gap: 0px;
+    }
+
+    /* Reducir aún más el tamaño de la fuente */
+    nav ul li a {
+        font-size: 4px; /* Ajuste para pantallas aún más pequeñas */
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                     BARRA DE TRABAJO*/
+
+/* ------------------------------------------------------Sección del Dashbord */
+.contactoD {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: center;
+    padding: 30px 0px;
+    margin: 45px auto;
+    background-color: rgba(255, 166, 0, 0.046);
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.contact-itemD {
+    width: 100%;
+    max-width: 250px; /* Aumenta el ancho máximo de cada ítem */
+    background-color: #ffffff;
+    border: 5px solid #ff945d; /* Aumenta el grosor del borde */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+
+.contact-itemD h3 {
+    font-size: 28px; /* Aumenta el tamaño del texto del título */
+    color: orange;
+    margin-bottom: 15px;
+}
+
+.contact-itemD p {
+    font-size: 18px; /* Aumenta el tamaño de fuente del texto */
+    color: #333;
+    line-height: 1.8;
+}
+
+.contact-itemD a {
+    color: orange;
+    text-decoration: none;
+    font-size: 20px; /* Aumenta el tamaño de fuente de los enlaces */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-itemD a:hover {
+    color: #f47c3c;
+}
+
+/* ---------------para una opcion seleccionada--------------*/
+.contact-item2D {
+    width: 100%;
+    max-width: 250px; /* Aumenta el ancho máximo de cada ítem */
+    background-color: rgba(255, 166, 0, 0.292);
+    border: 5px solid #ff945d; /* Aumenta el grosor del borde */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+
+.contact-item2D h3 {
+    font-size: 28px; /* Aumenta el tamaño del texto del título */
+    color: orange;
+    margin-bottom: 15px;
+}
+
+.contact-item2D p {
+    font-size: 18px; /* Aumenta el tamaño de fuente del texto */
+    color: #333;
+    line-height: 1.8;
+}
+
+.contact-item2D a {
+    color: orange;
+    text-decoration: none;
+    font-size: 20px; /* Aumenta el tamaño de fuente de los enlaces */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-item2D a:hover {
+    color: #f47c3c;
+}
+
+/* Iconos de redes sociales */
+.social-mediaD {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumenta el espacio entre los íconos */
+}
+
+.social-iconD {
+    width: 30px; /* Aumenta el tamaño de los íconos */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon2D {
+    width: 40px; /* Aumenta el tamaño de los íconos */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-iconD:hover {
+    transform: scale(1.15); /* Aumenta el efecto de ampliación */
+}
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+.social-iconI {
+    width: 25px; /* Aumenta el tamaño de los íconos */
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-iconI:hover {
+    transform: scale(1.15); /* Aumenta el efecto de ampliación */
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                     TABLA*/
+
+/* Estilo para la tabla de administradores */
+table.table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fondo de la tabla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.table thead tr {
+    background-color: #ffffff; /* Fondo blanco en el encabezado */
+    color: #ff945d; /* Texto en naranja */
+    font-weight: bold;
+    border-bottom: 2px solid #ff945d; /* Línea inferior para separar encabezado */
+}
+
+table.table th, table.table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #f2f2f2; /* Bordes en cada celda */
+    color: #333333e7; /* Color de texto de las celdas */
+}
+
+table.table th p{
+    color: rgba(255, 166, 0, 0.807); /* Color de texto de las celdas */
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                     REPORTES*/
+
+
+.reportes h3 {
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    background: white; /* Gradiente */
+    color: #ff9a8b;
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    padding-left: 20px;
+}
+
+.reportes a {
+    display: inline-block; /* Para que se comporten como botones */
+    margin: 10px 0; /* Espaciado vertical entre botones */
+    padding: 10px 30px; /* Tamaño del botón */
+    font-size: 16px; /* Tamaño de texto */
+    font-weight: bold; /* Resaltar texto */
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Texto blanco */
+    background: linear-gradient(45deg, #ff9a8b, #ff6a88, #ff99a1); /* Gradiente naranja-rosáceo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    margin-left: 10px; /* Desplazamiento adicional a la derecha */
+    padding-left: 20px;
+}
+
+.reportes a:hover {
+    background: linear-gradient(45deg, #ff6a88, #ff9a8b, #ff6a88); /* Cambia el gradiente al pasar el mouse */
+    transform: scale(1.05); /* Efecto de "crecer" */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.reportes hr {
+    border: none; /* Sin borde */
+    height: 1px; /* Altura de la línea */
+    background: #ff9a8b; /* Color de la línea */
+    margin: 20px 0; /* Espaciado */
+}
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                     FILTROS*/
+
+/* Contenedor */
+.texto-filtros-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    position: relative;
+}
+
+
+
+.filtros {
+    flex: 0 0 auto; /* Evita que se estire */
+    width: 100%;
+    max-width: 180px;  /* Tamaño compacto */
+    background-color: #f9f9f9;
+    border: 1px solid rgb(189, 13, 13);
+    padding: 0px;  /* Ajustado */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: auto; /* Alinear a la derecha */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filtros h3 {
+    font-size: 12px;  /* Más pequeño */
+    color: #cc5200;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.filtros label {
+    display: block;
+    margin-bottom: 4px;  /* Más pequeño */
+    font-weight: bold;
+    color: #663300;
+    font-size: 10px;  /* Más pequeño */
+}
+
+.filtros input[type="text"],
+.filtros input[type="submit"],
+.filtros button {
+    width: 100%;
+    padding: 4px;  /* Más pequeño */
+    margin-bottom: 6px;  /* Más pequeño */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 8px;  /* Más pequeño */
+}
+
+.filtros input[type="submit"],
+.filtros button {
+    background-color: #f47c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 8px;  /* Más pequeño */
+}
+
+.filtros input[type="submit"]:hover,
+.filtros button:hover {
+    background-color: #e03e2d;
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------*/
+
+/*                                                     LETRAS BIENVENIDA*/
+
+/* Ajuste para la sección de bienvenida */
+.texto {
+    flex: 1;
+    text-align: center; /* Centrar el texto */
+}
+
+.texto h1 {
+    font-size: 2em; /* Ajusta el tamaño de la fuente */
+    color: orange; /* Color del texto */
+}
+
+
+
+
+/* ----------------------------------------------------Pie de página */
+/* Pie de página */
+footer {
+    background-color: #ffffff; /* Fondo oscuro */
+    color: rgb(255, 94, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;     /* Centrar verticalmente */
+    box-sizing: border-box;  /* Asegura que el padding no afecte el ancho total */    
+}
+
+footer p {
+    margin: 0;
+}
