@@ -505,3 +505,162 @@ footer {
 footer p {
     margin: 0;
 }
+
+
+
+
+/* Contenedor para los botones de reportes */
+.botones-reportes {
+    display: flex; /* Para alinearlos en una fila */
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: flex-start; /* Alinea los botones hacia la izquierda */
+    margin-left: 20px; /* Espacio a la izquierda */
+    margin-right: 20px; /* Espacio a la derecha */
+}
+
+
+/* Estilo para el botón que abre el modal con gradiente */
+button {
+    background: linear-gradient(45deg, #ff9a8b, #ff6a88, #ff99a1); /* Gradiente de colores */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #e8897f, #e56a80, #e7a1a8); /* Gradiente más oscuro en hover */
+    transform: scale(1.05); /* Agrandar ligeramente al pasar el ratón */
+}
+
+button:focus {
+    outline: none; /* Eliminar el borde de enfoque */
+}
+
+button:active {
+    background: linear-gradient(45deg, #d6806e, #d24f71, #d58b8f); /* Gradiente aún más oscuro al hacer clic */
+}
+
+
+
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #f47c3c; /* Naranja */
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #333; /* Texto gris oscuro */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-content form select, .modal-content form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #f47c3c; /* Borde naranja */
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.modal-content form button {
+    margin-top: 10px;
+}
+
+/* Botón de cancelar */
+.modal-content button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #64432c; /* Gris oscuro */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #4c4948; /* Gris más oscuro */
+}
+
+
+
+
+/* Estilo general para los formularios */
+form {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la etiqueta del campo de fecha */
+label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+/* Estilo para el input tipo mes (fecha) */
+input[type="month"] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Efecto cuando el campo de fecha está enfocado */
+input[type="month"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* Espaciado entre el input y el botón */
+form > br {
+    margin: 10px 0;
+}
