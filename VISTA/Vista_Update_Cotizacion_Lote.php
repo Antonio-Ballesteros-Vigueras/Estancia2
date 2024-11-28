@@ -101,13 +101,85 @@ $userEmail = $_SESSION['correo_usuario'];
 </section>
 
 <section class="reportes">
-<hr>
-<h3>Reportes</h3>
-<a href="../VISTA/EXCEL/Reporte_Total_Cotizaciones_Lote_Por_Cliente.php">Total de cotizaciones por lote de clientes</a>
-<a href="../VISTA/EXCEL/Reporte_Producto_Mas_Cotizado_Lote.php">Producto más cotizado por lote</a>
-<a href="../VISTA/EXCEL/Reporte_Cliente_Mas_Productos_Cotizo_Lote.php">Cliente que más productos cotizó por lote en el último mes</a>
-<hr>
+    <hr>
+    <h3>Reportes</h3>
+    
+    <section class="botones-reportes">
+        <!-- Primer botón para el modal -->
+        <button onclick="mostrarModal()">Total de cotizaciones por lote de clientes</button>
+        <div class="modal" id="modalTotalCotizacionesPorLoteCliente" style="display: none;">
+            <div class="modal-content">
+                <h2>Total de cotizaciones por lote de clientes</h2>
+                <p>Selecciona el mes y el año en el que se trabajará su reporte.</p>
+                <form action="../VISTA/EXCEL/Reporte_Total_Cotizaciones_Lote_Por_Cliente.php" method="GET">
+                    <label for="fecha">Mes y Año:</label>
+                    <input type="month" id="fecha" name="fecha" required>
+                    <br><br>
+                    <img src="../VISTA/IMG/excel.png" alt="Inicio" class="social-iconI"><br>
+                    <button type="submit">Generar reporte</button>
+                </form>
+                <br>
+                <button type="button" onclick="cerrarModal('modalTotalCotizacionesPorLoteCliente')">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Segundo botón para el modal -->
+        <button onclick="mostrarModal2()">Producto más cotizado por lote</button>
+        <div class="modal" id="modalProductoMasCotizadoLote" style="display: none;">
+            <div class="modal-content">
+                <h2>Producto más cotizado por lote</h2>
+                <p>Selecciona el mes y el año en el que se trabajará su reporte.</p>
+                <form action="../VISTA/EXCEL/Reporte_Producto_Mas_Cotizado_Lote.php" method="GET">
+                    <label for="fecha">Mes y Año:</label>
+                    <input type="month" id="fecha" name="fecha" required>
+                    <br><br>
+                    <img src="../VISTA/IMG/excel.png" alt="Inicio" class="social-iconI"><br>
+                    <button type="submit">Generar reporte</button>
+                </form>
+                <br>
+                <button type="button" onclick="cerrarModal('modalProductoMasCotizadoLote')">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Tercer botón para el modal -->
+        <button onclick="mostrarModal3()">Cliente que más productos cotizó por lote</button>
+        <div class="modal" id="modalClienteMasProductosCotizoLote" style="display: none;">
+            <div class="modal-content">
+                <h2>Cliente que más productos cotizó por lote</h2>
+                <p>Selecciona el mes y el año en el que se trabajará su reporte.</p>
+                <form action="../VISTA/EXCEL/Reporte_Cliente_Mas_Productos_Cotizo_Lote.php" method="GET">
+                    <label for="fecha">Mes y Año:</label>
+                    <input type="month" id="fecha" name="fecha" required>
+                    <br><br>
+                    <img src="../VISTA/IMG/excel.png" alt="Inicio" class="social-iconI"><br>
+                    <button type="submit">Generar reporte</button>
+                </form>
+                <br>
+                <button type="button" onclick="cerrarModal('modalClienteMasProductosCotizoLote')">Cancelar</button>
+            </div>
+        </div>
+    </section>
+    <hr>
 </section>
+
+<script>
+    function mostrarModal() {
+        document.getElementById('modalTotalCotizacionesPorLoteCliente').style.display = 'flex';
+    }
+
+    function cerrarModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+
+    function mostrarModal2() {
+        document.getElementById('modalProductoMasCotizadoLote').style.display = 'flex';
+    }
+
+    function mostrarModal3() {
+        document.getElementById('modalClienteMasProductosCotizoLote').style.display = 'flex';
+    }
+</script>
+
 
 <table class="table table-success table-striped-columns">
     <thead>
