@@ -3,11 +3,20 @@ include '../../MODELO/db.php'; // Verifica la ruta correcta
 
 // Establecer los encabezados para exportar el archivo Excel
 header('Content-Type: application/vnd.ms-excel; charset=UTF-8');
-header('Content-Disposition: attachment; filename="Reporte_Maquilas_Por_Cliente.xls"');
+header('Content-Disposition: attachment; filename="Reporte_Maquilas_Por_Cliente_Segun_Fecha.xls"');
 header('Pragma: no-cache');
 header('Expires: 0');
 
-// Consulta para obtener los totales de maquilas por cliente y estado
+// Verificar si el parámetro 'fecha' está presente
+if (!isset($_GET['fecha'])) {
+    die("No se especificó una fecha válida.");
+}
+
+// Obtener los valores de mes y año
+$fecha = $_GET['fecha'];
+list($anio, $mes) = explode('-', $fecha);
+
+// Consulta SQL con filtro por mes y año
 $consulta = "
 SELECT 
     Usuario,
@@ -16,13 +25,15 @@ SELECT
     SUM(CASE WHEN Estado = 'Rechazada' THEN 1 ELSE 0 END) AS Rechazadas,
     SUM(CASE WHEN Estado = 'Pendiente' THEN 1 ELSE 0 END) AS Pendientes
 FROM Maquila
+WHERE YEAR(FechaDeRegistro) = $anio AND MONTH(FechaDeRegistro) = $mes
 GROUP BY Usuario;
 ";
+
 $result = mysqli_query($conn, $consulta);
 
 // Verificar si hay resultados
 if (!$result || mysqli_num_rows($result) == 0) {
-    die("No hay datos para el reporte.");
+    die("No hay datos para el reporte en el mes y año especificados.");
 }
 
 // Crear la tabla en formato HTML para Excel
