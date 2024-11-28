@@ -7,7 +7,20 @@ header('Content-Disposition: attachment; filename="Reporte_Cotizaciones_Por_Clie
 header('Pragma: no-cache');
 header('Expires: 0');
 
-// Consulta SQL para obtener los totales de cotizaciones por cliente y estado
+// Obtener el parámetro de fecha del formulario
+if (!isset($_GET['fecha']) || empty($_GET['fecha'])) {
+    die("No se proporcionó una fecha válida.");
+}
+
+$fecha = $_GET['fecha']; // Formato: YYYY-MM
+list($anio, $mes) = explode('-', $fecha);
+
+// Validar que los valores sean numéricos y válidos
+if (!is_numeric($anio) || !is_numeric($mes) || $mes < 1 || $mes > 12) {
+    die("La fecha proporcionada no es válida.");
+}
+
+// Consulta SQL para obtener los totales de cotizaciones filtrados por mes y año
 $consulta = "
 SELECT 
     Usuario,
@@ -16,6 +29,7 @@ SELECT
     SUM(CASE WHEN Estado = 'Pendiente' THEN 1 ELSE 0 END) AS Pendientes,
     SUM(CASE WHEN Estado = 'Rechazada' THEN 1 ELSE 0 END) AS Rechazadas
 FROM CotizacionLote
+WHERE YEAR(FechaDeCotizacion) = $anio AND MONTH(FechaDeCotizacion) = $mes
 GROUP BY Usuario;
 ";
 
@@ -23,7 +37,7 @@ $result = mysqli_query($conn, $consulta);
 
 // Verificar si hay resultados
 if (!$result || mysqli_num_rows($result) == 0) {
-    die("No hay datos para el reporte.");
+    die("No hay datos para el mes y año seleccionados.");
 }
 
 // Crear la tabla en formato HTML para Excel
@@ -31,7 +45,7 @@ echo "<table border='1' style='border-collapse: collapse;'>";
 
 // Título del reporte
 echo "<tr>
-        <td colspan='5' style='text-align:center; font-size:32px; font-weight:bold; background-color: #FF8C00; color: white;'>REPORTE DE COTIZACIONES POR LOTE POR CLIENTE</td>
+        <td colspan='5' style='text-align:center; font-size:32px; font-weight:bold; background-color: #FF8C00; color: white;'>REPORTE DE COTIZACIONES POR LOTES POR CLIENTE - $mes/$anio</td>
       </tr>";
 
 // Encabezados de la tabla
