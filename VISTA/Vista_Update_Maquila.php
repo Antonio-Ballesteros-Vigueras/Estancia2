@@ -101,12 +101,63 @@ $userEmail = $_SESSION['correo_usuario'];
 </section>
 
 <section class="reportes">
-<hr>
-<h3>Reportes</h3>
-<a href="../VISTA/EXCEL/Reporte_Total_Maquilas_Ultimo_Mes.php">Total de maquilas en el último mes</a>
-<a href="../VISTA/EXCEL/Reporte_Total_Maquilas_Por_Cliente.php">Total de maquilas por cliente</a>
-<hr>
+    <hr>
+    <h3>Reportes</h3>
+
+    <section class="botones-reportes">
+        <!-- Primer botón para el modal -->
+        <button onclick="mostrarModal()">Total de maquilas por mes</button>
+        <div class="modal" id="modalTotalDeMaquilasUltimoMes" style="display: none;">
+            <div class="modal-content">
+                <h2>Total de maquilas por mes</h2>
+                <p>Selecciona el mes y el año en el que se trabajará su reporte.</p>
+                <form action="../VISTA/EXCEL/Reporte_Total_Maquilas_Ultimo_Mes.php" method="GET">
+                    <label for="fecha">Mes y Año:</label>
+                    <input type="month" id="fecha" name="fecha" required>
+                    <br><br>
+                    <img src="../VISTA/IMG/excel.png" alt="Inicio" class="social-iconI"><br>
+                    <button type="submit">Generar reporte</button>
+                </form>
+                <br>
+                <button type="button" onclick="cerrarModal('modalTotalDeMaquilasUltimoMes')">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Segundo botón para el modal -->
+        <button onclick="mostrarModal2()">Total de maquilas por cliente</button>
+        <div class="modal" id="modalTotalDeMaquilasPorCliente" style="display: none;">
+            <div class="modal-content">
+                <h2>Total de maquilas por cliente</h2>
+                <p>Selecciona el mes y el año en el que se trabajará su reporte.</p>
+                <form action="../VISTA/EXCEL/Reporte_Total_Maquilas_Por_Cliente.php" method="GET">
+                    <label for="fecha">Mes y Año:</label>
+                    <input type="month" id="fecha" name="fecha" required>
+                    <br><br>
+                    <img src="../VISTA/IMG/excel.png" alt="Inicio" class="social-iconI"><br>
+                    <button type="submit">Generar reporte</button>
+                </form>
+                <br>
+                <button type="button" onclick="cerrarModal('modalTotalDeMaquilasPorCliente')">Cancelar</button>
+            </div>
+        </div>
+    </section>
+    <hr>
 </section>
+
+
+<script>
+        function mostrarModal() {
+            document.getElementById('modalTotalDeMaquilasUltimoMes').style.display = 'flex';
+        }
+
+        function cerrarModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function mostrarModal2() {
+            document.getElementById('modalTotalDeMaquilasPorCliente').style.display = 'flex';
+        }
+    </script>
 
 <table class="table table-success table-striped-columns">
     <thead>
